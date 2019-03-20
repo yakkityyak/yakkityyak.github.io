@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Wall</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        #img {
+            width: 50vw;
+            height: 50vh;
+        }
+        body{
+            background-color: green;
+        }
+        .comment-box{
+            background-color: blue;
+            font-size: 2em;
+        }
+        #message{
+            background-color: red;
+        }
+        input{
+            height: 10vw;
+            width: 80vh;
+            text-align: center;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <img id="img" src="https://images.pexels.com/photos/671931/pexels-photo-671931.jpeg?cs=srgb&dl=animal-animal-photography-blur-671931.jpg&fm=jpg">
+    <input id="message" placeholder="Write something nice">
+    <div class="comment-box"></div>
+
+
+    <script>
+    $("#message").keydown(function (event) {
+        if(event.key === "Enter"){
+            $(".comment-box").prepend(event.target.value +"<br/>");
+            $("#message").val("");
+        }
+
+    })
+    </script>
+</body>
+</html>
